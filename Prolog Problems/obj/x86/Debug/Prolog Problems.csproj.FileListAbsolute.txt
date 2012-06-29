@@ -1,0 +1,5 @@
+C:\Aaron\ConsolePractice\Prolog Problems\Prolog Problems\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Aaron\ConsolePractice\Prolog Problems\Prolog Problems\bin\Debug\Prolog Problems.exe
+C:\Aaron\ConsolePractice\Prolog Problems\Prolog Problems\bin\Debug\Prolog Problems.pdb
+C:\Aaron\ConsolePractice\Prolog Problems\Prolog Problems\obj\x86\Debug\Prolog Problems.exe
+C:\Aaron\ConsolePractice\Prolog Problems\Prolog Problems\obj\x86\Debug\Prolog Problems.pdb
