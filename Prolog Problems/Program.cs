@@ -9,7 +9,7 @@ namespace Prolog_Problems
     {
         static void Main(string[] args)
         {
-            p26();
+            p27A();
             Console.Read();
         }
 
@@ -108,7 +108,7 @@ namespace Prolog_Problems
         private static void p7()
         {
             //List variable 
-            List<List<object>> slist = new List<List<object>> { new List<object> { 'a' }, new List<object> { 'b' }, new List<object> { 'c' }, new List<object> { 'd' }, new List<object> { 'e' } };
+            List<List<object>> slist = new List<List<object>> { new List<object> { 'a','b' }, new List<object> { 'b' }, new List<object> { 'c' }, new List<object> { 'd' }, new List<object> { 'e' } };
             foreach (var subitem in slist)
             {
                 foreach(var subitems in subitem)
@@ -728,6 +728,205 @@ namespace Prolog_Problems
                 return 1;
             else
                 return number * Factorial(number - 1);
+        }
+
+        /// <summary>
+        /// (**) Group the elements of a set into disjoint subsets. (A)
+        /// </summary>
+        private static void p27A() 
+        {
+            List<int> oList = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            int group = int.Parse(Console.ReadLine().ToString());
+            int inc = 0;
+            int plus = 0;
+            int rem = 0;
+            int cycle = oList.Count / group;
+            rem = oList.Count % group;
+            for (int i = 0; i < oList.Count; i++)
+            {
+                if (rem > 0)
+                    plus = 1;
+                else
+                    plus = 0;
+                if (inc % (cycle + plus) == 0 && i != 0)
+                {
+                    rem--;
+                    Console.WriteLine();
+                    inc = 0;
+                    
+                }
+                inc++;
+                Console.Write(oList[i] + " ");
+                
+            }
+
+        }
+
+        /// <summary>
+        /// (**) Group the elements of a set into disjoint subsets. (B)
+        /// </summary>
+        private static void p27B()
+        {
+            List<int> oList = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            string[] group = Console.ReadLine().Split(',');
+            int k = 0;
+            int x = 0; 
+            for (int i = 0; i < oList.Count; i++)
+            {
+
+                if (int.Parse(group[k]) == x)
+                {
+                    Console.WriteLine();
+                    x = 0;
+                    k++;
+                }
+                x++;
+                Console.Write(oList[i] + " ");
+
+            }
+
+        }
+
+        /// <summary>
+        /// (**) Sorting a list of lists according to length of sublists. (A)
+        /// </summary>
+        private static void p28A()
+        {
+            List<List<object>> oList = new List<List<object>>() { 
+            new List<object> { 'a','b','c' }, new List<object> {'d','e' }, new List<object> { 'f','g','h' }, new List<object> {'d','e' }, new List<object> { 'i','j','k','l' },
+            new List<object> { 'm','n'}, new List<object> { 'o'}
+            };
+
+            List<List<object>> rlist = new List<List<object>>();
+
+            rlist = RecursiveA(oList, rlist);
+            
+            foreach (var subitem in rlist)
+            {
+                Console.Write("[");
+                foreach (var subitems in subitem)
+                {
+                    Console.Write(subitems + ",");
+                }
+                Console.Write("], ");
+            }            
+        }
+        private static List<List<object>> RecursiveA(List<List<object>> oList,  List<List<object>> rlist)
+        {
+            List<object> recList = new List<object>();
+
+            int temp = 1000;
+            int x = 0;
+            for (int i = 0; i < oList.Count; i++)
+            {
+                foreach (var item in oList[i])
+                {
+
+                    if (oList[i].Count < temp)
+                    {
+                        temp = oList[i].Count;
+                        x = i;
+                    }
+                }
+            }
+
+            if (oList.Count == 1)
+            {
+                recList.AddRange(oList[x]);
+                rlist.Add(recList);
+                oList.RemoveAt(x);
+                return rlist; 
+            }
+            else
+            {
+                recList.AddRange(oList[x]);
+                rlist.Add(recList);
+                oList.RemoveAt(x);
+                return RecursiveA(oList, rlist);
+            }
+
+        }
+
+        /// <summary>
+        /// (**) Sorting a list of lists according to length of sublists. (B)
+        /// </summary>
+        private static void p28B()
+        {
+            List<List<object>> oList = new List<List<object>>() { 
+            new List<object> { 'a','b','c' }, new List<object> {'d','e' }, new List<object> { 'f','g','h' }, new List<object> {'d','e' }, new List<object> { 'i','j','k','l' },
+            new List<object> { 'm','n'}, new List<object> { 'o'}
+            };
+
+            List<List<object>> rlist = new List<List<object>>();
+
+            rlist = RecursiveB(oList, rlist);
+
+            foreach (var subitem in rlist)
+            {
+                Console.Write("[");
+                foreach (var subitems in subitem)
+                {
+                    Console.Write(subitems + ",");
+                }
+                Console.Write("], ");
+            }
+
+
+        }
+        private static List<List<object>> RecursiveB(List<List<object>> oList, List<List<object>> rlist)
+        {
+            List<object> recList = new List<object>();
+
+            int temp = 0;
+            int x = 0;
+            int flag = 0;
+            for (int i = 0; i < oList.Count; i++)
+            {
+                foreach (var item in oList[i])
+                {
+                    flag = 0;
+                    if (oList[i].Count > temp)
+                    {
+                        for (int v = 0; v < oList.Count; v++)
+                        {
+                            if (oList[i].Count == oList[v].Count)
+                            {
+
+                                flag++;
+                            }
+                        }
+                        if (flag == 1)
+                        {
+                            temp = i;
+                            x = temp;
+                        }
+                        else
+                        { 
+                        
+                        }
+                            
+                        
+                    }
+                }
+            }
+
+            if (oList.Count == 1)
+            {
+                recList.AddRange(oList[x]);
+                rlist.Add(recList);
+                oList.RemoveAt(x);
+                return rlist;
+            }
+            else
+            {
+                recList.AddRange(oList[x]);
+                rlist.Add(recList);
+                oList.RemoveAt(x);
+                return RecursiveB(oList, rlist);
+            }
+
         }
 
     }

@@ -3,3 +3,13 @@ C:\Aaron\ConsolePractice\Prolog Problems\Prolog Problems\bin\Debug\Prolog Proble
 C:\Aaron\ConsolePractice\Prolog Problems\Prolog Problems\bin\Debug\Prolog Problems.pdb
 C:\Aaron\ConsolePractice\Prolog Problems\Prolog Problems\obj\x86\Debug\Prolog Problems.exe
 C:\Aaron\ConsolePractice\Prolog Problems\Prolog Problems\obj\x86\Debug\Prolog Problems.pdb
+C:\Aaron\ConsolePractice\Prolog-Problem\Prolog Problems\obj\x86\Debug\Prolog Problems.exe
+C:\Aaron\ConsolePractice\Prolog-Problem\Prolog Problems\obj\x86\Debug\Prolog Problems.pdb
+C:\Aaron\ConsolePractice\Prolog-Problem\Prolog Problems\bin\Debug\Prolog Problems.exe
+C:\Aaron\ConsolePractice\Prolog-Problem\Prolog Problems\bin\Debug\Prolog Problems.pdb
+C:\Aaron\ConsolePractice\Prolog-Problem\Prolog Problems\obj\x86\Debug\ResolveAssemblyReference.cache
+\\10.1.2.214\c$\aaron\ConsolePractice\Prolog-Problem\Prolog Problems\obj\x86\Debug\Prolog Problems.exe
+\\10.1.2.214\c$\aaron\ConsolePractice\Prolog-Problem\Prolog Problems\obj\x86\Debug\Prolog Problems.pdb
+\\10.1.2.214\c$\aaron\ConsolePractice\Prolog-Problem\Prolog Problems\bin\Debug\Prolog Problems.exe
+\\10.1.2.214\c$\aaron\ConsolePractice\Prolog-Problem\Prolog Problems\bin\Debug\Prolog Problems.pdb
+\\10.1.2.214\c$\aaron\ConsolePractice\Prolog-Problem\Prolog Problems\obj\x86\Debug\ResolveAssemblyReference.cache
